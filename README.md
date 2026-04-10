@@ -63,5 +63,6 @@ plt.show()
 Bar plot illustrate the top 3 roles and the top 5 skills related to each one
 
 # Insights
-1. From the plot, we can see SQL is the most requested skill for all three positions, with it being about half of all the positions.
-2. 
+1. From the plot, we can see SQL is the most requested skill for all three positions, with it being required for about half of all the positions.
+2. Data Engineer requires more specialized skills(aws, azure, spark) compare to data analyst and data scientist who are expected to be more proficient in more generalized data management and analysis tools(excel, sql)
+3. Python is a versatile skill, highly demanded across all three roles, but most prominently for Data Scientists (72%) and Data Engineers (65%).

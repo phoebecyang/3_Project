@@ -59,7 +59,7 @@ plt.show()
 ```
 
 # Result
-![Skill_demand_plot](percentage_of_skill.png)
+![Skill_demand_plot](percent_skill_demand.png)
 Bar plot illustrate the top 3 roles and the top 5 skills related to each one
 
 # Insights

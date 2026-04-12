@@ -66,3 +66,32 @@ Bar plot illustrate the top 3 roles and the top 5 skills related to each one
 1. From the plot, we can see SQL is the most requested skill for all three positions, with it being required for about half of all the positions.
 2. Data Engineer requires more specialized skills(aws, azure, spark) compare to data analyst and data scientist who are expected to be more proficient in more generalized data management and analysis tools(excel, sql)
 3. Python is a versatile skill, highly demanded across all three roles, but most prominently for Data Scientists (72%) and Data Engineers (65%).
+
+# How are in-demand skills trending for Data Analysts?
+To find out the in-demand skills of the job postings in 2023, I filtered out data analysts positions and grouped the skills by month. 
+
+# Visulaize data
+
+```python
+from matplotlib.ticker import PercentFormatter
+
+df_plot = df_DA_US_percent.iloc[:,:5]
+sns.lineplot(data=df_plot, dashes=False, legend='full',palette='tab10')
+sns.set_theme(style='ticks')
+sns.despine()
+
+plt.title('Trending Top Skills for Data Analysts in the US (Percentage)')
+plt.ylabel('Percentage of Job Postings')
+plt.xlabel('2023')
+plt.legend().remove()
+plt.gca().yaxis.set_major_formatter(PercentFormatter(decimals=0))
+
+for i in range(5):
+    plt.text(12, df_plot.iloc[-1, i], df_plot.columns[i], color='black')
+```
+![Skill_Trend_Plot](skill_trend_percent.png)
+
+# Insights
+1. SQL remains the most requested skill throughout the year though it shows a slow decrease.
+2. Excel remains steady throughout the year though it slightly decrease in August and September, and Excel also surpass Python and Tableau throughout the entire year.
+3. SQL, Excel, and Python are the top 3 most requested skills among all the job postings. With Python surpassing Tableau in November and shows an increasing trend after.

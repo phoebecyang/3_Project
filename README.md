@@ -171,3 +171,42 @@ plt.show()
 2. The bottom graph highlights that foundational skills like Excel, PowerPoint, and SQL are the most in-demand, even though they may not offer the highest salaries. This demonstrates the importance of these core skills for employability in data analysis roles.
 
 3. There is a clear difference between the highest-paid and the most in-demand skills. For data analysts who want to reach the maxium potential of their careers can considering developing diverse skills that include both high-paying specialized skill and popular in-demand skills.
+
+# 4. What are the optimal skills for data analysts to learn? (High Demand and High Paying)
+
+To identify the most optimal skills(the highest paid and highest demanded skills) I calculate the percentage of skill demand and the median salary of these skills. 
+
+# Visualize Data
+```python
+from adjustText import adjust_text
+plt.scatter(df_DA_skills_high_demand['skill_percent'], df_DA_skills_high_demand['median_salary'])
+plt.xlabel('Percentage of Job Postings Requiring Skill')
+plt.ylabel('Median Salary (USD)')
+plt.title('High-Demand Skills for Data Analysts in the US')
+
+ax = plt.gca()
+ax.yaxis.set_major_formatter(plt.FuncFormatter(lambda y, pos: f'${int(y/1000)}K'))
+
+texts = []
+for i, txt in enumerate(df_DA_skills_high_demand.index):
+    texts.append(plt.text(df_DA_skills_high_demand['skill_percent'].iloc[i], df_DA_skills_high_demand['median_salary'].iloc[i], " " + txt))
+
+# Adjust text to avoid overlap and add arrows
+adjust_text(texts, arrowprops=dict(arrowstyle='->', color='gray'))
+
+plt.show()
+```
+
+# Result
+![optimal_skill](optimal_skills.png)
+
+# Insight
+1. The skill Oracle appears to be the highest-paid skill though it is not that common compare to others. This suggests specialize skill has a higher-paid in the data analysts field.
+2. More commonly required skills such as excel and sql, are more common but have a lower medain salary compared to more specialized skills such as python and tableau.
+3. Skills such as Python, Tableau, and SQL Server are towards the higher end of the salary spectrum while also being fairly common in job listings, indicating that proficiency in these tools can lead to good opportunities in data analytics.
+
+# What I learned
+Through this project, I learned about the basic foundation of data analysis using python. Instead of just learning about the theory and commend, by doin the project hand-on, I have develop a deeper understanding of doing analysis using python. This project helps me learn about the job prospects of data analysts when it comes to the skills I can learn to acquire a higher salary. In addition, I also learn about the data job markert in the United States. I can use what I learn to see all the different job types in this specific area. 
+
+# Challenges that I Faced
+At first, I did not really understand how python work so it took me quite some time to figure out the basics. In addition, I feel frustrated whenever I the code I ran turned out to be an error, as it often took me much time to find out where it went wrong.
